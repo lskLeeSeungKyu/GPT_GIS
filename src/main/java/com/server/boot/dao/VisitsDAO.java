@@ -17,5 +17,7 @@ public interface VisitsDAO {
 
     List<VisitsDTO> selectVisitsAll();
 
+    List<VisitsDTO> selectVisitsTextInfoAll();
+
 }
 

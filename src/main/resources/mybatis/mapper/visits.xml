@@ -18,4 +18,17 @@
     <select id="selectVisitsAll" resultType="Map">
         SELECT * FROM "GPT_GIS".VISITS
     </select>
+
+    <select id="selectVisitsTextInfoAll" resultType="Map">
+        SELECT
+            '음식점명: ' || r.name || ', 평점: ' || v.taste_rating || ', 날짜: ' || TO_CHAR(v.visit_date, 'YYYY-MM-DD') AS VISIT_TEXT_INFO
+        FROM
+            "GPT_GIS".VISITS v
+        JOIN
+            "GPT_GIS".RESTAURANTS r ON v.restaurant_id = r.id
+        ORDER BY
+            v.visit_date;
+    
+   
+    </select>
 </mapper>

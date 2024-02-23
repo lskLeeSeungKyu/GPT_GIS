@@ -36,4 +36,9 @@ public class VisitsController {
     public List<VisitsDTO> selectVisitsAll() {
         return visitsService.selectVisitsAll();
     }
+
+    @GetMapping("/selectVisitsTextInfoAll")
+    public List<VisitsDTO> selectVisitsTextInfoAll() {
+        return visitsService.selectVisitsTextInfoAll();
+    }
 }

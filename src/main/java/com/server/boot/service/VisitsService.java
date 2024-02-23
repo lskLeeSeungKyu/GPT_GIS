@@ -42,5 +42,10 @@ public class VisitsService {
         return visitsDAO.selectVisitsAll();
     }
 
+    @Transactional(readOnly = true)
+    public List<VisitsDTO> selectVisitsTextInfoAll() {
+        return visitsDAO.selectVisitsTextInfoAll();
+    }
+
 
 }
