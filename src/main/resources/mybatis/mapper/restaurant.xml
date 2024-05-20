@@ -8,7 +8,8 @@
     </insert>
 
     <delete id="restaurantDelete">
-        DELETE FROM "GPT_GIS".RESTAURANTS WHERE ID = #{restaurantId}
+        DELETE FROM "GPT_GIS".RESTAURANTS WHERE ID = #{restaurantId};
+        DELETE FROM "GPT_GIS".VISITS WHERE RESTAURANT_ID = #{restaurantId};
     </delete>
 
     <select id="selectRestaurant" resultType="RestaurantDTO">
@@ -18,4 +19,8 @@
     <select id="selectRestaurantAll" resultType="Map">
         SELECT * FROM "GPT_GIS".RESTAURANTS
     </select>
+    <insert id="requestLog" parameterType="Map">
+        INSERT INTO "GPT_GIS"."request_log" ("user_id", "user_name", "user_execute", "user_request", "user_ip", "time") VALUES
+            (#{userId}, #{userName}, #{handlerMethod}, #{requestURL}, #{userIp}, #{time})
+    </insert>
 </mapper>

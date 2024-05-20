@@ -17,5 +17,7 @@ public interface RestaurantDAO {
 
     List<RestaurantDTO> selectRestaurantAll();
 
+    void requestLog(Map<String, String> map);
+
 }
 

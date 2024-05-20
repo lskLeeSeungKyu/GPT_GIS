@@ -42,5 +42,8 @@ public class RestaurantService {
         return restaurantDAO.selectRestaurantAll();
     }
 
-
+    @Transactional
+    public void requestLog(Map<String, String> map) { 
+        restaurantDAO.requestLog(map); 
+    }
 }
